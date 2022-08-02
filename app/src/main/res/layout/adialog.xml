@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"   />
+
+    <RadioGroup
+        android:id="@+id/RatingRadioGroup"
+        android:layout_width="462dp"
+        android:layout_height="479dp"
+        android:layout_marginBottom="60dp"
+        android:padding="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:ignore="MissingConstraints">
+
+        <RadioButton
+            android:id="@+id/HotDog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HotDog pizza" />
+
+        <RadioButton
+            android:id="@+id/pizza_margherita"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="pizza margherita" />
+
+        <RadioButton
+            android:id="@+id/beef"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Beef pizza" />
+
+
+
+
+
+        <Button
+            android:id="@+id/submitBT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit" />
+
+        <Button
+            android:id="@+id/cancelBT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel" />
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
