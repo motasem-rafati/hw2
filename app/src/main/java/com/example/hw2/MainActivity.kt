@@ -7,74 +7,73 @@ import android.view.MenuItem
 import android.view.View
 import android.view.MenuInflater as MenuInflater1
 import android.widget.*
+import android.annotation.SuppressLint
+
+
+
+import android.content.*
+import android.widget.*
+import android.net.Uri
+import com.example.hw2.BEST_APP.Companion.APP_ID
+
+
+import android.widget.Toast
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val button: Button = findViewById(R.id.order)
-        val talb : TextView = findViewById(R.id.Result)
 
-        var flag : String = "pizza"
+        var ap: Button = findViewById(R.id.button)
+        var bes: TextView = findViewById(R.id.textView)
+        var flag: String = "search"
+        var cate = arrayOf("search", "games", "food")
+        var spin: Spinner = findViewById(R.id.spinner)
+        spin.adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, cate)
+        ap.setOnClickListener {
+            /* if (flag == "search") {
 
-        val spinnerVal : Spinner = findViewById(R.id.spinnera)
 
-        var options = arrayOf("pizza hot","macdonald")
+            } else if (flag == "games") {
 
-        spinnerVal.adapter = ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,options )
 
-        button.setOnClickListener{
-            if(flag=="pizza hot") {
-                var dialog_var = Dialog()
-                dialog_var.show(supportFragmentManager, "Custom Dialog")
-            }
-            else {
-                var dialog_va = bdialog()
-                dialog_va.show(supportFragmentManager, "Custom Dialog")
-            }
+            } else
+
+
         }
 
-
-
-        spinnerVal.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            */
+        }
+        spin.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
 
-                flag = options.get(p2) //p2 is the index of selected item
+                flag = cate.get(p2)
 
             }
 
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-
+            override fun onNothingSelected(parent: AdapterView<*>?) {
                 TODO("Not yet implemented")
-
             }
 
         }
 
 
     }
-
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu to use in the action bar
         val inflater = menuInflater
         inflater.inflate(R.menu.like_menu, menu)
         return super.onCreateOptionsMenu(menu)
-
-        }
+    }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        var dialog_var = Dialog()
         when(item.itemId){
-
-            R.id.item2 -> Toast.makeText(this, "like the restaurant", Toast.LENGTH_SHORT).show()
-            R.id.item3 -> Toast.makeText(this, "dislike the restaurant", Toast.LENGTH_SHORT).show()
+            R.id.item1 -> dialog_var.show(supportFragmentManager, "Custom Dialog")
+            R.id.item2 -> Toast.makeText(this, "item 2 selected", Toast.LENGTH_SHORT).show()
 
         }
         return true;
     }
-    fun receiveFeedback(feedback: String){
-        val or : TextView = findViewById(R.id.Result)
-        or.text = feedback;
-
-
     }
-    }
+

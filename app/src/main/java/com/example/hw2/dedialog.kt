@@ -8,8 +8,7 @@ import android.view.MenuInflater as MenuInflater1
 import android.widget.*
 import androidx.fragment.app.DialogFragment
 
-class bdialog: DialogFragment(R.layout.bdialog) {
+class dedialog: DialogFragment(R.layout.bdialog) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
     }
 }
